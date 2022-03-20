@@ -32,6 +32,8 @@ async function run() {
         pull_number: pull_request.number
     });
 
+    console.log(resp);
+
 }
 
 run();
