@@ -46,8 +46,8 @@ async function run() {
     shell.cd('./repos')
     shell.exec('git clone https://github.com/beefyfinance/beefy-app');
     shell.cd('./beefy-app');
-    shell.cd('git checkout prod');
-    shell.cd('git pull');
+    shell.exec('git checkout prod');
+    shell.exec('git pull');
     shell.cd('..');
     shell.exec(`git clone https://${GITHUB_TOKEN}@github.com/beefyfinance/beefy-v2`);
     shell.cd('./beefy-v2');
