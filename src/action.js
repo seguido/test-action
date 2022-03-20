@@ -53,6 +53,7 @@ async function run() {
     shell.cd('./beefy-v2');
     shell.exec('yarn install');
     shell.exec('yarn sync');
+    shell.exec('git status');
 
 }
 
