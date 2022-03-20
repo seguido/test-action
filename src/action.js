@@ -66,6 +66,8 @@ async function run() {
         shell.exec(`git config user.name "chebiN"`)
         console.log('here3')
         shell.exec(`git commit -m 'sync'`)
+        shell.exec('git push');
+        console.log('here5')
         shell.exec(`git push --set-upstream origin ${branch}`)
     } else {
         console.log('Nothing to commit');
