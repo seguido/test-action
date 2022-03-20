@@ -8560,8 +8560,8 @@ async function run() {
     const octokit = new Octokit(GITHUB_TOKEN);
 
     let resp = await octokit.pulls.listFiles({
-        owner: repository.fullname.split('/')[0], 
-        repo: repository.fullname.split('/')[0],
+        owner: repository.full_name.split('/')[0], 
+        repo: repository.full_name.split('/')[0],
         number: pull_request.number
     });
 
