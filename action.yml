@@ -1,0 +1,12 @@
+name: 'Sync Action'
+description: 'Sync v1 vault/assets onto v2 Beefy app'
+author: 'chebiN'
+
+inputs:
+  GITHUB_TOKEN:
+    description: 'Github token'
+    required: true
+
+runs:
+  using: 'node14'
+  main: 'dist/index.js'

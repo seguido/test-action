@@ -1,0 +1,14 @@
+{
+  "name": "test-action",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "ncc build src/action.js -o  dist"
+  },
+  "repository": "git@github.com:seguido/test-action.git",
+  "author": "chebiN",
+  "license": "MIT",
+  "dependencies": {
+    "@vercel/ncc": "^0.33.3"
+  }
+}
