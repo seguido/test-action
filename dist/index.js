@@ -15711,30 +15711,34 @@ async function run() {
     // console.log(resp);
 
 
-    shell.exec('hub --version')
-    shell.exec('git config --global hub.protocol https');
-    shell.exec('hub clone beefyfinance/beefy-app')
-    // shell.cd('mkdir repos');
-    // shell.cd('./repos')
-    // shell.exec('git clone https://github.com/beefyfinance/beefy-app');
-    // shell.cd('./beefy-app');
-    // shell.exec('git checkout prod');
-    // shell.exec('git pull');
-    // shell.cd('..');
-    // shell.exec(`git clone https://${GITHUB_TOKEN}@github.com/beefyfinance/beefy-v2`);
-    // shell.cd('./beefy-v2');
-    // shell.exec('yarn install');
-    // shell.exec('yarn sync');
-    // let out = shell.exec('git status');
-    // let modified = out.grep('modified').split('\n').filter(line => line.includes("src/") || line.includes("yarn.lock")|| line.includes('package.json'));
-    // console.log(modified);
-    // if (modified.length > 0) {
-    //     console.log('Modified files, commiting and syncing')
-    //     shell.exec('git add .');
-    //     shell.exec(`git checkout -b auto-sync/${pull_request}${Math.random(45)}`);
-    // } else {
-    //     console.log('Nothing to commit');
-    // }
+    // shell.exec('hub --version')
+    // shell.exec('git config --global hub.protocol https');
+    // console.log('before cloning')
+    // shell.exec('hub clone beefyfinance/beefy-app')
+    shell.cd('mkdir repos');
+    shell.cd('./repos')
+    shell.exec('git clone https://github.com/beefyfinance/beefy-app');
+    shell.cd('./beefy-app');
+    shell.exec('git checkout prod');
+    shell.exec('git pull');
+    shell.cd('..');
+    shell.exec(`git clone https://${GITHUB_TOKEN}@github.com/beefyfinance/beefy-v2`);
+    shell.cd('./beefy-v2');
+    shell.exec('yarn install');
+    shell.exec('yarn sync');
+    let out = shell.exec('git status');
+    let modified = out.grep('modified').split('\n').filter(line => line.includes("src/") || line.includes("yarn.lock")|| line.includes('package.json'));
+    console.log(modified);
+    if (modified.length > 0) {
+        console.log('Modified files, commiting and syncing')
+        const branch = `auto-sync/${pull_request}${Math.random(45)}`
+        shell.exec('git add .');
+        shell.exec(`git checkout -b ${branch}}`);
+        shell.exec(`git commit -m 'sync'`)
+        // shell.exec(`git push --set-upstream origin ${branch}`)
+    } else {
+        console.log('Nothing to commit');
+    }
 
 }
 
