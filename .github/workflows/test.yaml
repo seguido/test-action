@@ -12,4 +12,3 @@ jobs:
       - uses: ./
         with:
           GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
-          GITHUB_USER: ${{ secrets.REPO_USER }}

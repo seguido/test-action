@@ -6,9 +6,6 @@ inputs:
   GITHUB_TOKEN:
     description: 'Github token'
     required: true
-  GITHUB_USER:
-    description: 'Github user'
-    required: true
 
 runs:
   using: 'node16'
