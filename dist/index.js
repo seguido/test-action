@@ -15711,7 +15711,7 @@ async function run() {
     // console.log(resp);
 
 
-    shell.exec('hub clone -p beefyfinance/beefy-v2')
+    shell.exec('hub clone beefyfinance/beefy-app')
     // shell.cd('mkdir repos');
     // shell.cd('./repos')
     // shell.exec('git clone https://github.com/beefyfinance/beefy-app');
