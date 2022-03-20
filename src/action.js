@@ -9,6 +9,9 @@ async function run() {
 
     const { context = {} } = github;
     const { pull_request } = context.payload;
+    console.log('context')
+    console.log(context);
+    console.log('---')
     console.log('Attempting sync!');
     console.log('branching');
     console.log(pull_request.number);
