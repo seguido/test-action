@@ -42,6 +42,9 @@ async function run() {
     shell.ls();
     console.log('___')
     console.log(shell.ls());
+    shell.cd('./repos');
+    shell.exec('git clone https://github.com/beefyfinance/beefy-app')
+    console.log(shell.ls());
 }
 
 run();
