@@ -69,6 +69,7 @@ async function run() {
         shell.exec('git push');
         console.log('here5')
         shell.exec(`git push --set-upstream origin ${branch}`)
+        console.log('here6');
     } else {
         console.log('Nothing to commit');
     }
