@@ -8542,7 +8542,7 @@ async function run() {
 
 
     const { context = {} } = github;
-    const { pull_request } = context.payload;
+    const { pull_request, repository } = context.payload;
     console.log('context')
     console.log(context);
     console.log('---')
@@ -8553,7 +8553,7 @@ async function run() {
     console.log('@@')
     console.log(pull_request.paths)
     console.log('REPO');
-    console.log(context.repository);
+    console.log(repository);
 
     
 
