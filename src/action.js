@@ -24,9 +24,13 @@ async function run() {
 
     
 
-    // const octokit = new Octokit(GITHUB_TOKEN);
+    const octokit = new Octokit(GITHUB_TOKEN);
 
-    // octokit.pulls.listFiles({owner: , repo: pull_request.head.repo.full_name})
+    let resp = await octokit.pulls.listFiles({
+        owner: respository.fullname.split('/')[0], 
+        repo: respository.fullname.split('/')[0],
+        number: pull_request.number
+    });
 
 }
 
