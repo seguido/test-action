@@ -15731,7 +15731,7 @@ async function run() {
     console.log(modified);
     if (modified.length > 0) {
         console.log('Modified files, commiting and syncing')
-        const branch = `auto-sync/${pull_request}${Math.random(45)}`
+        const branch = `auto-sync/${pull_request.number}${Math.random()*45}`
         shell.exec('git add .');
         shell.exec(`git checkout -b ${branch}}`);
         shell.exec(`git commit -m 'sync'`)
