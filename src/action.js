@@ -11,7 +11,12 @@ async function run() {
     const { pull_request } = context.payload;
     console.log('Attempting sync!');
     console.log('branching');
-    console.log(pull_request.number)
+    console.log(pull_request.number);
+    console.log(pull_request);
+    console.log('@@')
+    console.log(pull_request.paths)
+
+    
 
     // const octokit = new Octokit(GITHUB_TOKEN);
 
