@@ -15711,8 +15711,8 @@ async function run() {
     // console.log(resp);
 
 
-    shell.exec('git config --global hub.protocol https');
     shell.exec('hub --version')
+    shell.exec('git config --global hub.protocol https');
     shell.exec('hub clone beefyfinance/beefy-app')
     // shell.cd('mkdir repos');
     // shell.cd('./repos')
