@@ -1,5 +1,5 @@
 const core = require('@actions/core');
-// const github = require('@actions/github');
+const github = require('@actions/github');
 
 // const { Octokit } = require("@octokit/rest");
 
@@ -10,8 +10,8 @@ async function run() {
 
 
 
-    // const { context = {} } = github;
-    // const { pull_request, repository } = context.payload;
+    const { context = {} } = github;
+    const { pull_request, repository } = context.payload;
     // console.log('context')
     // console.log(context);
     // console.log('---')
@@ -36,31 +36,29 @@ async function run() {
 
     // console.log(resp);
 
-    console.log('___')
-    console.log(shell.pwd());
-    console.log('___')
-    shell.ls();
-    console.log('___')
-    console.log(shell.ls());
-    shell.cd('mkdir repos');
-    shell.cd('./repos')
-    shell.exec('git clone https://github.com/beefyfinance/beefy-app');
-    shell.cd('./beefy-app');
-    shell.exec('git checkout prod');
-    shell.exec('git pull');
-    shell.cd('..');
-    shell.exec(`git clone https://${GITHUB_TOKEN}@github.com/beefyfinance/beefy-v2`);
-    shell.cd('./beefy-v2');
-    shell.exec('yarn install');
-    shell.exec('yarn sync');
-    let out = shell.exec('git status');
-    console.log('ending');
-    console.log(out.code);
-    console.log('@@@@')
-    console.log(out.grep('modified'))
-    console.log('@@@@@')
-    console.log('@@@@@@')
 
+    shell.exec('hub clone beefyfinance/beefy-v2')
+    // shell.cd('mkdir repos');
+    // shell.cd('./repos')
+    // shell.exec('git clone https://github.com/beefyfinance/beefy-app');
+    // shell.cd('./beefy-app');
+    // shell.exec('git checkout prod');
+    // shell.exec('git pull');
+    // shell.cd('..');
+    // shell.exec(`git clone https://${GITHUB_TOKEN}@github.com/beefyfinance/beefy-v2`);
+    // shell.cd('./beefy-v2');
+    // shell.exec('yarn install');
+    // shell.exec('yarn sync');
+    // let out = shell.exec('git status');
+    // let modified = out.grep('modified').split('\n').filter(line => line.includes("src/") || line.includes("yarn.lock")|| line.includes('package.json'));
+    // console.log(modified);
+    // if (modified.length > 0) {
+    //     console.log('Modified files, commiting and syncing')
+    //     shell.exec('git add .');
+    //     shell.exec(`git checkout -b auto-sync/${pull_request}${Math.random(45)}`);
+    // } else {
+    //     console.log('Nothing to commit');
+    // }
 
 }
 
