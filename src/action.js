@@ -61,7 +61,7 @@ async function run() {
         shell.exec('git add .');
         shell.exec(`git checkout -b ${branch}}`);
         shell.exec(`git config user.email "chebiN@beefy.com"`)
-        shell.exec(`git config user.email "chebiN"`)
+        shell.exec(`git config user.name "chebiN"`)
         shell.exec(`git commit -m 'sync'`)
         // shell.exec(`git push --set-upstream origin ${branch}`)
     } else {
