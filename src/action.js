@@ -42,10 +42,17 @@ async function run() {
     shell.ls();
     console.log('___')
     console.log(shell.ls());
-    shell.cd('./repos');
+    shell.cd('mkdir repos');
+    shell.cd('./repos')
     shell.exec('git clone https://github.com/beefyfinance/beefy-app');
-    console.log(shell.ls());
+    shell.cd('./beefy-app');
+    shell.cd('git checkout prod');
+    shell.cd('git pull');
+    shell.cd('..');
     shell.exec(`git clone https://${GITHUB_TOKEN}@github.com/beefyfinance/beefy-v2`);
+    shell.cd('./beefy-v2');
+    shell.exec('npm run sync');
+
 }
 
 run();
