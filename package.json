@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "ncc build src/action.js -o  dist"
+    "build": "ncc build src/action.js -o dist"
   },
   "repository": "git@github.com:seguido/test-action.git",
   "author": "chebiN",
