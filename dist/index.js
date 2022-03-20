@@ -8562,7 +8562,7 @@ async function run() {
     let resp = await octokit.pulls.listFiles({
         owner: repository.full_name.split('/')[0], 
         repo: repository.full_name.split('/')[0],
-        number: pull_request.number
+        pull_number: pull_request.number
     });
 
 }
