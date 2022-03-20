@@ -9025,8 +9025,13 @@ async function run() {
     shell.exec('yarn install');
     shell.exec('yarn sync');
     let out = shell.exec('git status');
+    console.log('ending');
+    console.log(out.code);
+    console.log('@@@@')
+    console.log(out.grep('modified'))
+    console.log('@@@@@')
+    console.log('@@@@@@')
 
-    console.log(out);
 
 }
 
