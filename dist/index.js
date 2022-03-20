@@ -9022,8 +9022,8 @@ async function run() {
     shell.cd('..');
     shell.exec(`git clone https://${GITHUB_TOKEN}@github.com/beefyfinance/beefy-v2`);
     shell.cd('./beefy-v2');
-    shell.exec('npm install');
-    shell.exec('npm run sync');
+    shell.exec('yarn install');
+    shell.exec('yarn sync');
 
 }
 
