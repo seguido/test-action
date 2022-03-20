@@ -7421,8 +7421,11 @@ async function run() {
 
     // console.log(resp);
 
-    shell.pwd();
+    console.log('___')
+    console.log(shell.pwd());
+    console.log('___')
     shell.ls();
+    console.log('___')
     console.log(shell.ls());
 }
 
