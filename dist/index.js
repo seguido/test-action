@@ -8543,25 +8543,25 @@ async function run() {
 
     const { context = {} } = github;
     const { pull_request, repository } = context.payload;
-    console.log('context')
-    console.log(context);
-    console.log('---')
-    console.log('Attempting sync!');
-    console.log('branching');
-    console.log(pull_request.number);
-    console.log(pull_request);
-    console.log('@@')
-    console.log(pull_request.paths)
-    console.log('REPO');
-    console.log(repository);
+    // console.log('context')
+    // console.log(context);
+    // console.log('---')
+    // console.log('Attempting sync!');
+    // console.log('branching');
+    // console.log(pull_request.number);
+    // console.log(pull_request);
+    // console.log('@@')
+    // console.log(pull_request.paths)
+    // console.log('REPO');
+    // console.log(repository);
 
     
 
     const octokit = new Octokit(GITHUB_TOKEN);
 
     let resp = await octokit.pulls.listFiles({
-        owner: respository.fullname.split('/')[0], 
-        repo: respository.fullname.split('/')[0],
+        owner: repository.fullname.split('/')[0], 
+        repo: repository.fullname.split('/')[0],
         number: pull_request.number
     });
 
