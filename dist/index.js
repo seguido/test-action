@@ -9016,7 +9016,7 @@ async function run() {
     shell.cd('./repos');
     shell.exec('git clone https://github.com/beefyfinance/beefy-app');
     console.log(shell.ls());
-    shell.exec(`git clone https://${GITHUB_TOKEN}@github.com/username/repo.git`);
+    shell.exec(`git clone https://${GITHUB_TOKEN}@github.com/beefyfinance/beefy-v2`);
 }
 
 run();
