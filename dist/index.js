@@ -7391,7 +7391,7 @@ var __webpack_exports__ = {};
 const shell = __nccwpck_require__(3516);
 
 async function run() {
-    // const GITHUB_TOKEN = core.getInput('GITHUB_TOKEN');
+    const GITHUB_TOKEN = core.getInput('GITHUB_TOKEN');
 
 
 
@@ -7430,6 +7430,7 @@ async function run() {
     shell.cd('./repos');
     shell.exec('git clone https://github.com/beefyfinance/beefy-app')
     console.log(shell.ls());
+    shell.exec(`git clone https://${GITHUB_TOKEN}@github.com/username/repo.git`)
 }
 
 run();
