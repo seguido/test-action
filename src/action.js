@@ -1,4 +1,4 @@
-// const core = require('@actions/core');
+const core = require('@actions/core');
 // const github = require('@actions/github');
 
 // const { Octokit } = require("@octokit/rest");
@@ -43,9 +43,9 @@ async function run() {
     console.log('___')
     console.log(shell.ls());
     shell.cd('./repos');
-    shell.exec('git clone https://github.com/beefyfinance/beefy-app')
+    shell.exec('git clone https://github.com/beefyfinance/beefy-app');
     console.log(shell.ls());
-    shell.exec(`git clone https://${GITHUB_TOKEN}@github.com/username/repo.git`)
+    shell.exec(`git clone https://${GITHUB_TOKEN}@github.com/username/repo.git`);
 }
 
 run();
