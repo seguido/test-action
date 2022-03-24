@@ -13,3 +13,4 @@ jobs:
       - uses: ./
         with:
           GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
+          GITHUB_USER: 'chebiN'

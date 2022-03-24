@@ -5,6 +5,7 @@ const shell = require('shelljs');
 
 async function run() {
   const GITHUB_TOKEN = core.getInput('GITHUB_TOKEN');
+  const GITHUB_USER = core.getInput('GITHUB_USER');
 
   const { context = {} } = github;
 
@@ -37,7 +38,7 @@ async function run() {
     const branch = `as/${commit}`;
     shell.exec('git add .');
     shell.exec(`git checkout -b ${branch}`);
-    shell.exec(`git config user.name "chebiN"`);
+    shell.exec(`git config user.name "${GITHUB_USER}"`);
     shell.exec(`git commit -m 'sync'`);
     shell.exec('git push');
     shell.exec(`git push --set-upstream origin ${branch}`);
