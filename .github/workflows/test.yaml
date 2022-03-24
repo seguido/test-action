@@ -1,8 +1,9 @@
 name: Test
 
 on: 
-  pull_request:
-    types: [opened, synchronize]
+  push:
+    branches: 
+      - 'test3/**'
 
 jobs:
   test:
