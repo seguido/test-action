@@ -43,7 +43,7 @@ async function run() {
     shell.exec(`git config user.email "${GITHUB_EMAIL}"`);
     shell.exec(`git commit -m 'sync'`);
     const diffOut = shell.exec(`git diff --name-only HEAD HEAD~1`);
-    const commitedFileCount = split('/n').filter(line => line.includes('src/') || line.includes('package.json')).length;
+    const commitedFileCount = diffOut.split('/n').filter(line => line.includes('src/') || line.includes('package.json')).length;
     if (commitedFileCount == 0) {
       return console.log('No changes after commit formatting');
     }
