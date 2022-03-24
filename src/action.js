@@ -28,8 +28,9 @@ async function run() {
     // shell.exec('git config --global hub.protocol https');
     // console.log('before cloning')
     // shell.exec('hub clone beefyfinance/beefy-app')
-    shell.cd('mkdir repos');
-    shell.cd('./repos')
+    shell.cd('..');
+    shell.exec('mkdir repos')
+    shell.exec('./repos')
     shell.exec('git clone https://github.com/beefyfinance/beefy-app');
     shell.cd('./beefy-app');
     shell.exec('git checkout prod');
