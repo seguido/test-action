@@ -1,4 +1,4 @@
-name: 'Sync Action'
+name: 'Sync CI'
 description: 'Sync v1 vault/assets onto v2 Beefy app'
 author: 'chebiN'
 
