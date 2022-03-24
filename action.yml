@@ -9,6 +9,9 @@ inputs:
   GITHUB_USER:
     description: 'Username to commit'
     required: true
+  GITHUB_EMAIL:
+    description: 'Email to be used on commit'
+    required: true
 
 runs:
   using: 'node16'

@@ -14,3 +14,4 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
           GITHUB_USER: 'chebiN'
+          GITHUB_EMAIL: '17909998+seguido@users.noreply.github.com'
