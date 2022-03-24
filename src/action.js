@@ -7,11 +7,11 @@ async function run() {
   const GITHUB_TOKEN = core.getInput('GITHUB_TOKEN');
 
   const { context = {} } = github;
-  const { pull_request } = context.payload;
+  const { sha } = context.payload;
 
   console.log(context)
   console.log('------')
-  console.log(context.payload)
+  console.log(sha)
 
   console.log('hello')
   //Create repos folder
