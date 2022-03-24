@@ -1,4 +1,4 @@
-name: 'Sync Action'
+name: 'Sync CI'
 description: 'Sync v1 vault/assets onto v2 Beefy app'
 author: 'chebiN'
 
@@ -8,5 +8,5 @@ inputs:
     required: true
 
 runs:
-  using: 'node14'
+  using: 'node16'
   main: 'dist/index.js'
