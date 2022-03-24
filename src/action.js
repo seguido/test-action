@@ -60,16 +60,11 @@ async function run() {
         const branch = `auto-sync/${pull_request.number}${Math.random()*45}`
         shell.exec('git add .');
         shell.exec(`git checkout -b ${branch}`);
-        console.log('here')
         shell.exec(`git config user.email "chebiN@beefy.com"`)
-        console.log('here2')
         shell.exec(`git config user.name "chebiN"`)
-        console.log('here3')
         shell.exec(`git commit -m 'sync'`)
         shell.exec('git push');
-        console.log('here5')
         shell.exec(`git push --set-upstream origin ${branch}`)
-        console.log('here6');
     } else {
         console.log('Nothing to commit');
     }
